@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex shrink</title>
+    <style>
+        .container{
+            display: flex;
+            border: 2px solid black;
+            max-width: 350px;
+        }
+
+        .item{
+            margin: 5px;
+            background-color: orangered;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .s1{
+            flex-shrink: 1;
+        }
+
+        .s0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .s2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+        
+        .s3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+
+        .g1{
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>flex-shrink: 1</h1>
+    <div class="container">
+        <div class="item s1 g1">A</div>
+        <div class="item s1 g1">B</div>
+        <div class="item s1 g1">C</div>
+        <div class="item s1 g1">D</div>
+        <div class="item s1 g1">E</div>
+    </div>
+    <div class="container">
+        <div class="item s1 g1">A</div>
+        <div class="item s1 g1">B</div>
+        <div class="item s1 g1">Etiam porttitor ullamcorper viverra. Sed aliquam facilisis malesuada.</div>
+        <div class="item s1 g1">D</div>
+        <div class="item s1 g1">E</div>
+    </div>
+    <h1>flex-shrink: 0 / basis: 100px</h1>
+    <div class="container">
+        <div class="item s0 g1">A</div>
+        <div class="item s0 g1">B</div>
+        <div class="item s0 g1">Etiam facilisis malesuada.</div>
+        <div class="item s0 g1">D</div>
+        <div class="item s0 g1">E</div>
+    </div>
+
+    <h1>flex-shrink: mix / basis: 100px</h1>
+    <div class="container">
+        <div class="item s1 g1">A</div>
+        <div class="item s2 g1">B</div>
+        <div class="item s2 g1">Etiam facilisis malesuada.</div>
+        <div class="item s3 g1">D</div>
+    </div>
+</body>
+</html>
